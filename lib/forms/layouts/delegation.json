@@ -1,0 +1,168 @@
+{
+  "template": "/forms/delegation-template.pdf",
+  "pageCount": 2,
+  "pageWidth": 595.27,
+  "pageHeight": 841.89,
+  "fields": [
+    {
+      "name": "ownerName",
+      "page": 0,
+      "x": 73.05,
+      "y": 632.53,
+      "width": 459.86,
+      "rtl": false
+    },
+    {
+      "name": "unitNumber",
+      "page": 0,
+      "x": 217.54,
+      "y": 590.03,
+      "width": 127.56,
+      "rtl": false
+    },
+    {
+      "name": "delegateName",
+      "page": 0,
+      "x": 156.84,
+      "y": 547.52,
+      "width": 376.07,
+      "rtl": false
+    },
+    {
+      "name": "delegateId",
+      "page": 0,
+      "x": 187.16,
+      "y": 505.02,
+      "width": 345.75,
+      "rtl": false
+    },
+    {
+      "name": "delegatePhone",
+      "page": 0,
+      "x": 212.48,
+      "y": 462.52,
+      "width": 320.43,
+      "rtl": false
+    },
+    {
+      "name": "reason",
+      "page": 0,
+      "x": 62.36,
+      "y": 355.01,
+      "width": 470.55,
+      "rtl": false
+    },
+    {
+      "name": "startDate",
+      "page": 0,
+      "x": 143.84,
+      "y": 316.75,
+      "width": 85.03,
+      "rtl": false
+    },
+    {
+      "name": "endDate",
+      "page": 0,
+      "x": 253.86,
+      "y": 316.75,
+      "width": 85.03,
+      "rtl": false
+    },
+    {
+      "name": "signName",
+      "page": 0,
+      "x": 100.36,
+      "y": 205.73,
+      "width": 170.07,
+      "rtl": false
+    },
+    {
+      "name": "signDate",
+      "page": 0,
+      "x": 94.54,
+      "y": 119.64,
+      "width": 113.38,
+      "rtl": false
+    },
+    {
+      "name": "ownerName",
+      "page": 1,
+      "x": 62.36,
+      "y": 624.28,
+      "width": 378.15,
+      "rtl": true
+    },
+    {
+      "name": "unitNumber",
+      "page": 1,
+      "x": 322,
+      "y": 580.28,
+      "width": 127.56,
+      "rtl": true
+    },
+    {
+      "name": "delegateName",
+      "page": 1,
+      "x": 62.36,
+      "y": 536.27,
+      "width": 388.04,
+      "rtl": true
+    },
+    {
+      "name": "delegateId",
+      "page": 1,
+      "x": 62.36,
+      "y": 492.27,
+      "width": 377.85,
+      "rtl": true
+    },
+    {
+      "name": "delegatePhone",
+      "page": 1,
+      "x": 62.36,
+      "y": 448.27,
+      "width": 359.75,
+      "rtl": true
+    },
+    {
+      "name": "reason",
+      "page": 1,
+      "x": 62.36,
+      "y": 333.26,
+      "width": 470.55,
+      "rtl": true
+    },
+    {
+      "name": "startDate",
+      "page": 1,
+      "x": 310.08,
+      "y": 295,
+      "width": 85.03,
+      "rtl": true
+    },
+    {
+      "name": "endDate",
+      "page": 1,
+      "x": 189.01,
+      "y": 295,
+      "width": 85.03,
+      "rtl": true
+    },
+    {
+      "name": "signName",
+      "page": 1,
+      "x": 331.83,
+      "y": 203.27,
+      "width": 170.07,
+      "rtl": true
+    },
+    {
+      "name": "signDate",
+      "page": 1,
+      "x": 383.1,
+      "y": 114.18,
+      "width": 113.38,
+      "rtl": true
+    }
+  ]
+}

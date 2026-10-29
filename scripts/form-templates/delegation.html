@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  Re-typeset of mkh-delegation-form.docx (Storage: makadiheights-data/mkh-delegation-form.docx).
+  Page 1 = English "Entrance Permission", page 2 = Arabic "تصريح دخول أفراد", as in the original.
+  Elements with data-field mark where the portal writes the visitor's answers.
+  Rebuild with: node scripts/form-templates/build.mjs
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./form-base.css" />
+<style>@page { size: A4; margin: 0; } .page { width: 210mm; height: 297mm; }</style>
+</head>
+<body>
+  <section class="page">
+    <img class="header" src="./assets/form-header.jpg" alt="" />
+    <h1 class="title underline">Entrance Permission</h1>
+
+    <p class="row">I <span class="blank grow" data-field="ownerName"></span></p>
+    <p class="row">The owner of unit number <span class="blank w-45" data-field="unitNumber"></span> Project (Makadi Heights)</p>
+    <p class="row">Delegate Mr./s. <span class="blank grow" data-field="delegateName"></span></p>
+    <p class="row">ID/Passport Number <span class="blank grow" data-field="delegateId"></span></p>
+    <p class="row">Delegate Phone Number <span class="blank grow" data-field="delegatePhone"></span></p>
+    <p class="note">[A copy of ID/Passport is needed, and is mandatory to add delegate’s phone number]</p>
+    <p class="row">To enter my unit for the reason of</p>
+    <p class="row"><span class="blank grow" data-field="reason"></span></p>
+    <p class="row">Starting from <span class="blank w-30" data-field="startDate"></span> to <span class="blank w-30" data-field="endDate"></span> or until further notice.</p>
+
+    <p class="pledge">Abiding by the community rules and regulations and I pledge any behavior made by the above-mentioned person.</p>
+
+    <div class="sign">
+      <p class="row small">Name: <span class="blank w-60" data-field="signName"></span></p>
+      <p class="row small sig">Signature: <span class="blank w-60 tall"></span></p>
+      <p class="row small">Date: <span class="blank w-40" data-field="signDate"></span></p>
+    </div>
+    <p class="footnote">Any breach of the community regulations will lead to the cancellation of the delegation.</p>
+  </section>
+
+  <section class="page" dir="rtl" lang="ar">
+    <img class="header" src="./assets/form-header.jpg" alt="" />
+    <h1 class="title underline ar">تصريح دخول أفراد</h1>
+
+    <p class="row ar">أفوض أنا السيد(ة) <span class="blank grow" data-field="ownerName"></span></p>
+    <p class="row ar">مالك الوحدة رقم <span class="blank w-45" data-field="unitNumber"></span> مشروع (مكادي هايتس)</p>
+    <p class="row ar">بدخول السيد(ة) <span class="blank grow" data-field="delegateName"></span></p>
+    <p class="row ar">رقم إثبات شخصية <span class="blank grow" data-field="delegateId"></span></p>
+    <p class="row ar">رقم هاتف المفوض عنه <span class="blank grow" data-field="delegatePhone"></span></p>
+    <p class="note ar">[يجب إرسال صوره من البطاقه الشخصية مع الإلتزام بإضافة رقم هاتف المفوض]</p>
+    <p class="row ar">للدخول للوحدة الخاصة بي وذلك بغرض</p>
+    <p class="row ar"><span class="blank grow" data-field="reason"></span></p>
+    <p class="row ar">وهذا التفويض يبدأ من تاريخ <span class="blank w-30" data-field="startDate"></span> حتى <span class="blank w-30" data-field="endDate"></span> أو حتى إشعار آخر.</p>
+
+    <p class="pledge ar">مع الإلتزام بقواعد المجتمع السكني وأتعهد بتصديق وإقرار أي تصرف يقوم به المفوض المذكور أعلاه.</p>
+
+    <div class="sign">
+      <p class="row small ar">الإسم: <span class="blank w-60" data-field="signName"></span></p>
+      <p class="row small sig ar">التوقيع: <span class="blank w-60 tall"></span></p>
+      <p class="row small ar">التاريخ: <span class="blank w-40" data-field="signDate"></span></p>
+    </div>
+    <p class="footnote ar">يتم إيقاف التفويض فى حالة مخالفة المفوض قواعد المجتمع السكني.</p>
+  </section>
+</body>
+</html>

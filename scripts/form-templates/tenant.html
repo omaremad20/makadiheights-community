@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  Re-typeset of mkh-tenant-form.docx (Storage: makadiheights-data/mkh-tenant-form.docx),
+  "Move-in Permit / صيغة إيجار وحدة سكنية". US Letter, bilingual labels as in the original.
+  Elements with data-field mark where the portal writes the visitor's answers.
+  Rebuild with: node scripts/form-templates/build.mjs
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./form-base.css" />
+<style>
+  @page { size: Letter; margin: 0; }
+  .page { width: 8.5in; height: 11in; padding: 12mm 20mm 16mm; }
+  .titlebox { width: 74mm; margin: 0 auto 10mm; border: 1.5px solid #4a9a3a; padding: 2mm 3mm 3mm; text-align: center; }
+  .titlebox .en { font-family: "Carlito", "Liberation Sans", sans-serif; font-weight: 700; font-size: 12pt; }
+  .titlebox .ar { font-weight: 700; font-size: 14pt; line-height: 1.5; }
+  .line { display: flex; align-items: baseline; gap: 2mm; font-family: "Carlito", "Liberation Sans", sans-serif; font-size: 10.5pt; margin: 0 0 3.2mm; white-space: nowrap; }
+  .line .ar { font-size: 11pt; direction: rtl; }
+  .line .blank { flex: 1 1 auto; height: 6.5mm; }
+  .noteline { display: flex; justify-content: space-between; font-family: "Carlito", "Liberation Sans", sans-serif; font-size: 10.5pt; margin: 1mm 0 7mm; }
+  .noteline .ar { direction: rtl; font-size: 11pt; }
+  .gap { height: 3mm; }
+  .cm { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 8mm; font-family: "Carlito", "Liberation Sans", sans-serif; font-size: 10.5pt; }
+  .cm .box { flex: 1 1 auto; margin: 0 4mm; height: 14mm; border-bottom: 1px dotted #222; }
+  .cm .ar { direction: rtl; font-size: 11pt; }
+</style>
+</head>
+<body>
+  <section class="page">
+    <img class="header" src="./assets/form-header.jpg" alt="" />
+    <div class="titlebox">
+      <div class="en">Move-in Permit</div>
+      <div class="ar" lang="ar">صيغة إيجار وحدة سكنية</div>
+    </div>
+
+    <div class="line"><span>Unit Number:</span><span class="blank" data-field="unitNumber"></span><span class="ar" lang="ar">رقم الوحدة:</span></div>
+    <div class="line"><span>Tenant’s Full Name:</span><span class="blank" data-field="tenantName"></span><span class="ar" lang="ar">إسم المستأجر بالكامل:</span></div>
+    <div class="line"><span>Tenant’s Address:</span><span class="blank" data-field="tenantAddress"></span><span class="ar" lang="ar">عنوان المستأجر:</span></div>
+    <div class="line"><span>Tenant’s Mobile Number:</span><span class="blank" data-field="tenantMobile"></span><span class="ar" lang="ar">رقم هاتف المستأجر:</span></div>
+    <div class="line"><span>Tenant’s E-mail Address:</span><span class="blank" data-field="tenantEmail"></span><span class="ar" lang="ar">البريد الإلكتروني للمستأجر:</span></div>
+    <div class="line"><span>ID/Passport Number:</span><span class="blank" data-field="tenantId"></span><span class="ar" lang="ar">رقم إثبات شخصية المستأجر:</span></div>
+    <div class="noteline"><span>[Note that a copy of ID/Passport is needed]</span><span class="ar" lang="ar">[يرجى إرسال صورة من البطاقة الشخصية]</span></div>
+    <div class="line"><span>Start Renting Date:</span><span class="blank" data-field="startDate"></span><span class="ar" lang="ar">تاريخ بدء الإيجار:</span></div>
+    <div class="line"><span>End Renting Date:</span><span class="blank" data-field="endDate"></span><span class="ar" lang="ar">تاريخ إنتهاء الإيجار:</span></div>
+    <div class="line"><span>Furnished:</span><span class="blank" data-field="furnished"></span><span class="ar" lang="ar">مفروش:</span></div>
+    <div class="gap"></div>
+    <div class="line"><span>Owner’s Signature:</span><span class="blank" style="height:10mm"></span><span class="ar" lang="ar">توقيع المالك:</span></div>
+    <div class="line"><span>Tenant’s Signature:</span><span class="blank" style="height:10mm"></span><span class="ar" lang="ar">توقيع المستأجر:</span></div>
+    <div class="cm"><span>CM Rep Signature</span><span class="box"></span><span class="ar" lang="ar">توقيع مسؤول إدارة المجتمعات</span></div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@font-face { font-family: "Noto Naskh Arabic"; src: url("./assets/NotoNaskhArabic-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Noto Naskh Arabic"; src: url("./assets/NotoNaskhArabic-700.woff2") format("woff2"); font-weight: 700; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+  color: #111;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  position: relative;
+  padding: 14mm 22mm 18mm;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.ar, [lang="ar"] { font-family: "Noto Naskh Arabic", "DejaVu Sans", sans-serif; }
+
+.header { display: block; width: 100%; height: auto; margin: 0 auto 10mm; }
+.title { text-align: center; font-size: 15pt; font-weight: 700; margin: 0 0 7mm; }
+.underline { text-decoration: underline; text-underline-offset: 3px; }
+
+.row { display: flex; align-items: baseline; gap: 2.5mm; font-size: 13pt; line-height: 1.25; margin: 0 0 6.5mm; white-space: nowrap; }
+.row.small { font-size: 10.5pt; margin-bottom: 5mm; }
+.blank { display: inline-block; height: 7mm; border-bottom: 1px dotted #222; flex: 0 0 auto; }
+.blank.grow { flex: 1 1 auto; }
+.blank.tall { height: 11mm; }
+.w-30 { width: 30mm; } .w-40 { width: 40mm; } .w-45 { width: 45mm; } .w-60 { width: 60mm; } .w-90 { width: 90mm; }
+
+.note { font-size: 9.5pt; font-weight: 700; text-decoration: underline; text-align: center; margin: 1mm 0 7mm; }
+.pledge { font-style: italic; font-size: 13pt; line-height: 1.6; margin: 8mm 0 8mm; }
+.ar.pledge { font-style: normal; }
+.sign { margin-top: 4mm; }
+.footnote { font-size: 10pt; font-style: italic; line-height: 1.5; margin-top: 6mm; }
+.ar.footnote { font-style: normal; }

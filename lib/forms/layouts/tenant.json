@@ -1,0 +1,80 @@
+{
+  "template": "/forms/tenant-template.pdf",
+  "pageCount": 1,
+  "pageWidth": 612,
+  "pageHeight": 792,
+  "fields": [
+    {
+      "name": "unitNumber",
+      "page": 0,
+      "x": 120.8,
+      "y": 542.37,
+      "width": 381.28,
+      "rtl": false
+    },
+    {
+      "name": "tenantName",
+      "page": 0,
+      "x": 145.83,
+      "y": 508.13,
+      "width": 317.19,
+      "rtl": false
+    },
+    {
+      "name": "tenantAddress",
+      "page": 0,
+      "x": 136.95,
+      "y": 473.88,
+      "width": 348.67,
+      "rtl": false
+    },
+    {
+      "name": "tenantMobile",
+      "page": 0,
+      "x": 170.4,
+      "y": 439.64,
+      "width": 299.96,
+      "rtl": false
+    },
+    {
+      "name": "tenantEmail",
+      "page": 0,
+      "x": 165.75,
+      "y": 405.4,
+      "width": 278.94,
+      "rtl": false
+    },
+    {
+      "name": "tenantId",
+      "page": 0,
+      "x": 152.45,
+      "y": 371.16,
+      "width": 283.71,
+      "rtl": false
+    },
+    {
+      "name": "startDate",
+      "page": 0,
+      "x": 142.82,
+      "y": 298.32,
+      "width": 336.93,
+      "rtl": false
+    },
+    {
+      "name": "endDate",
+      "page": 0,
+      "x": 138.55,
+      "y": 264.08,
+      "width": 332.86,
+      "rtl": false
+    },
+    {
+      "name": "furnished",
+      "page": 0,
+      "x": 107.45,
+      "y": 229.84,
+      "width": 408.52,
+      "rtl": false
+    }
+  ]
+}
