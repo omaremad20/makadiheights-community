@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
+/*
+ * Brand typography
+ * Boowie is the primary brand font. It is not bundled in this repository yet:
+ * add the licensed file as /public/fonts/boowie.woff2 and uncomment the url()
+ * source below. Until then, an installed copy is used if present, then
+ * Times New Roman.
+ */
+@font-face {
+  font-family: "Boowie";
+  src:
+    local("Boowie"),
+    local("Boowie Regular");
+  /* , url("/fonts/boowie.woff2") format("woff2"); */
+  font-display: swap;
+}
+
+@theme {
+  /* Official brand colours */
+  --color-brand: #88bcbb;
+  --color-brand-dark: #2d6867;
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+
+  /* Supporting tints derived from the brand colours */
+  --color-brand-50: #f3f8f8;
+  --color-brand-100: #e4efef;
+  --color-brand-200: #c8e0df;
+  --color-brand-700: #24504f;
+  --color-brand-900: #163332;
+
+  --color-line: #dfe8e8;
+  --color-muted: #55615f;
+  --color-subtle: #7a8685;
+
+  --color-warning-50: #fdf6ec;
+  --color-warning-200: #f1d7ad;
+  --color-warning-800: #7a4a0b;
+  --color-danger-50: #fcf0ef;
+  --color-danger-200: #efc2bd;
+  --color-danger-700: #a3302a;
+
+  --font-display: "Boowie", "Times New Roman", Times, serif;
+  --font-serif: "Times New Roman", Times, serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(22 51 50 / 0.04), 0 1px 1px rgb(22 51 50 / 0.03);
+  --shadow-raised: 0 8px 24px -12px rgb(22 51 50 / 0.18), 0 2px 6px -2px rgb(22 51 50 / 0.06);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-dark);
+  outline-offset: 2px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
