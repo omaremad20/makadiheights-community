@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Suspense } from "react";
-import { UtensilsCrossed } from "lucide-react";
+import { ExternalLink, MapPin, UtensilsCrossed } from "lucide-react";
 import { ContentSection } from "@/components/content/content-section";
 import { DocumentActions } from "@/components/documents/document-actions";
 import { SourceDocuments } from "@/components/documents/source-documents";
 import { MembershipSections } from "@/components/membership/membership-sections";
+import { LinkButton } from "@/components/ui/button";
 import { Card, Container, ErrorState, Eyebrow, SectionHeading, Skeleton } from "@/components/ui/primitives";
 import { getContentSections, getDocuments } from "@/lib/data/queries";
 import { findDocument, toDocumentLinks } from "@/lib/documents";
@@ -13,6 +14,13 @@ import { findDocument, toDocumentLinks } from "@/lib/documents";
 export const metadata: Metadata = {
   title: "Serenity Beach",
   description: "Beach access at Serenity Alpha Hotel, resident discounts, beach rules, the Serenity menu and beach membership prices.",
+};
+
+// Google lists the hotel as "SRNTY Sea Reef", the current name of Serenity Alpha Beach, Makadi Bay.
+const HOTEL_LOCATION = {
+  embedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.8529215057847!2d33.91555227510347!3d26.97155657661222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145287e48edf6e4d%3A0x1c578e257cb014ac!2sSRNTY%20Sea%20Reef!5e0!3m2!1sen!2seg!4v1793280041998!5m2!1sen!2seg",
+  shareUrl: "https://maps.app.goo.gl/3y6WoAqdFF9LhjBu6",
 };
 
 const SECTION_IDS = {
@@ -98,6 +106,35 @@ async function MenuCard() {
   );
 }
 
+function HotelLocation() {
+  return (
+    <section id="location" aria-labelledby="location-title" className="scroll-mt-24">
+      <SectionHeading
+        id="location-title"
+        title="Serenity Hotel Location"
+        description="Serenity Alpha Hotel, Makadi Bay. On Google Maps the hotel appears as SRNTY Sea Reef, its current name."
+        action={
+          <LinkButton href={HOTEL_LOCATION.shareUrl} external variant="secondary">
+            <MapPin aria-hidden /> Open in Google Maps <ExternalLink aria-hidden />
+          </LinkButton>
+        }
+      />
+      <Card className="overflow-hidden">
+        <div className="relative aspect-[4/3] w-full bg-brand-50 sm:aspect-[16/9] lg:aspect-[21/9]">
+          <iframe
+            src={HOTEL_LOCATION.embedUrl}
+            title="Map showing the location of Serenity Alpha Hotel (SRNTY Sea Reef), Makadi Bay"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full border-0"
+          />
+        </div>
+      </Card>
+    </section>
+  );
+}
+
 export default function SerenityPage() {
   return (
     <>
@@ -113,6 +150,7 @@ export default function SerenityPage() {
               ["#access", "Access"],
               ["#discounts", "Discounts"],
               ["#menu", "Menu"],
+              ["#location", "Location"],
               ["#packages", "Packages"],
               ["#calculator", "Calculator"],
             ].map(([href, label]) => (
@@ -134,6 +172,8 @@ export default function SerenityPage() {
             <MenuCard />
           </Suspense>
         </section>
+
+        <HotelLocation />
 
         <Suspense fallback={<Skeleton className="h-[30rem]" />}>
           <MembershipSections
