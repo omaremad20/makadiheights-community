@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useDeferredValue, useMemo, useState } from "react";
 import { MapPin, Phone, Search, X } from "lucide-react";
+import { BRAND_LOGOS } from "@/lib/data/brand-logos";
 import type { Business, BusinessGroup } from "@/lib/data/types";
 import { formatPhone, telHref } from "@/lib/format";
 import { buttonClasses } from "@/components/ui/button";
@@ -14,9 +16,36 @@ function normalise(s: string) {
     .replace(/[̀-ͯ]/g, "");
 }
 
+function BrandMark({ business }: { business: Business }) {
+  const logo = BRAND_LOGOS[business.id];
+  return (
+    <div className="mb-4 flex h-28 items-center justify-center rounded-xl border border-line bg-white px-4 py-3">
+      {logo ? (
+        // The name is shown right below, so the logo is decorative for screen readers.
+        <Image
+          src={logo.src}
+          alt=""
+          width={logo.width}
+          height={logo.height}
+          sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+          className="h-full w-auto max-w-full object-contain"
+        />
+      ) : (
+        <span
+          aria-hidden
+          className="flex size-14 items-center justify-center rounded-full bg-brand-50 font-display text-2xl text-brand-dark ring-1 ring-brand-200"
+        >
+          {business.name.charAt(0)}
+        </span>
+      )}
+    </div>
+  );
+}
+
 function BusinessCard({ business }: { business: Business }) {
   return (
     <li className="flex flex-col rounded-2xl border border-line bg-white p-5 shadow-card">
+      <BrandMark business={business} />
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <h3 className="font-display text-xl leading-tight text-ink">{business.name}</h3>
